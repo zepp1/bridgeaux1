@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
-import { Check } from "lucide-react";
+import { Check, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const tiers = [
@@ -98,8 +98,10 @@ const Pricing = () => (
               </li>
             ))}
             {t.excluded?.map((f) => (
-              <li key={f} className="flex gap-2 text-muted-foreground/70 line-through">
-                <span className="h-4 w-4 shrink-0" />
+              <li key={f} className="flex items-center gap-2 text-muted-foreground/50">
+                <span className="h-4 w-4 shrink-0 rounded-full bg-muted-foreground/30 inline-flex items-center justify-center">
+                  <X className="h-2.5 w-2.5 text-background" strokeWidth={3} />
+                </span>
                 <span>{f}</span>
               </li>
             ))}
