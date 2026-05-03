@@ -377,7 +377,7 @@ const Index = () => {
             <div
               key={t.name}
               className={cn(
-                "relative rounded-md border p-7 flex flex-col bg-card",
+                "relative rounded-md border p-7 flex flex-col bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift",
                 t.highlight ? "border-brand-green shadow-lift" : "border-border",
               )}
             >
@@ -389,9 +389,15 @@ const Index = () => {
               <h3 className="font-display text-2xl">{t.name}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{t.blurb}</p>
 
-              <div className="mt-6 flex items-baseline gap-2">
-                <span className="font-display text-4xl text-brand-ink">{t.price}</span>
-                <span className="text-sm text-muted-foreground">{t.sub}</span>
+              <div className="mt-6 flex items-stretch gap-3">
+                <div className="flex-1 rounded-sm border border-border p-3">
+                  <div className="font-display text-2xl text-brand-ink">{t.setup}</div>
+                  <div className="text-[11px] uppercase tracking-wider text-muted-foreground mt-0.5">setup</div>
+                </div>
+                <div className="flex-1 rounded-sm border border-border p-3">
+                  <div className="font-display text-2xl text-brand-ink">{t.monthly}</div>
+                  <div className="text-[11px] uppercase tracking-wider text-muted-foreground mt-0.5">per month</div>
+                </div>
               </div>
 
               <ul className="mt-6 space-y-2.5 text-sm flex-1">
@@ -402,11 +408,9 @@ const Index = () => {
                   </li>
                 ))}
                 {t.excluded?.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-muted-foreground/50">
-                    <span className="h-4 w-4 shrink-0 rounded-full bg-muted-foreground/30 inline-flex items-center justify-center">
-                      <X className="h-2.5 w-2.5 text-background" strokeWidth={3} />
-                    </span>
-                    <span>{f}</span>
+                  <li key={f} className="flex gap-2 text-muted-foreground/50">
+                    <span className="h-4 w-4 shrink-0 inline-flex items-center justify-center text-xs">✕</span>
+                    <span className="line-through">{f}</span>
                   </li>
                 ))}
               </ul>
@@ -424,6 +428,18 @@ const Index = () => {
               </Link>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <p className="text-sm text-muted-foreground">
+            Need more? We also offer Enterprise and Custom plans.
+          </p>
+          <Link
+            to="/pricing"
+            className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-brand-green hover:gap-2.5 transition-all"
+          >
+            See all plans including Enterprise and Custom <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
 
