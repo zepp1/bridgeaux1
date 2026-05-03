@@ -28,7 +28,7 @@ const Index = () => {
             <span className="eyebrow">Now in early access · India</span>
             <h1 className="mt-5 font-display text-5xl md:text-7xl leading-[1.02] tracking-tight text-brand-ink">
               Your business,{" "}
-              <span className="italic text-bridge">live online</span>
+              <span className="italic text-bridge pr-2">live online</span>
               <br /> in 60 minutes.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
