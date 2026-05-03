@@ -240,21 +240,7 @@ const Index = () => {
                 <textarea
                   defaultValue="I run a small bakery in Indiranagar, Bengaluru. We do custom cakes and weekend brunch."
                   rows={3}
-                  style={{
-                    width: "100%",
-                    background: "hsl(160 35% 8%)",
-                    border: "1px solid hsl(160 20% 14%)",
-                    borderRadius: "6px",
-                    padding: "12px 14px",
-                    color: "hsl(165 20% 94%)",
-                    fontSize: "13px",
-                    lineHeight: "1.55",
-                    outline: "none",
-                    resize: "none",
-                    fontFamily: "inherit",
-                  }}
-                  onFocus={(e) => (e.currentTarget.style.borderColor = "hsl(161 80% 40% / 0.6)")}
-                  onBlur={(e) => (e.currentTarget.style.borderColor = "hsl(160 20% 14%)")}
+                  className="w-full rounded-md border border-border bg-background px-3.5 py-3 text-[13px] leading-relaxed text-foreground outline-none resize-none focus:border-brand-green/60 transition-colors"
                 />
                 <div className="flex flex-wrap gap-1.5">
                   {["Restaurant", "Retail", "Tutor", "Salon", "Freelancer"].map((t) => (
@@ -287,9 +273,12 @@ const Index = () => {
                   ))}
                 </ul>
 
-                <button className="mt-2 w-full rounded-sm bg-gradient-bridge text-brand-paper text-sm font-medium py-2.5">
+                <a
+                  href="#waitlist"
+                  className="mt-2 w-full inline-flex items-center justify-center rounded-sm bg-gradient-bridge text-brand-paper text-sm font-medium py-2.5 hover:opacity-90 transition"
+                >
                   Launch →
-                </button>
+                </a>
               </div>
             </div>
           </div>
