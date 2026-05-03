@@ -1,6 +1,8 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
-import { ArrowRight, Check, Globe, Mail, MapPin, Sparkles, MessageSquare, LayoutDashboard } from "lucide-react";
+import { ArrowRight, Check, Globe, Mail, MapPin, Sparkles, MessageSquare, LayoutDashboard, X, Plus, Minus } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const pieces = [
   { icon: Globe, title: "Website", body: "Mobile-ready, SEO clean. Live in minutes — not weeks." },
@@ -17,13 +19,147 @@ const steps = [
   { n: "03", title: "Approve and go live", body: "Review in one screen. Click launch. Manage from a single dashboard." },
 ];
 
+const tiers = [
+  {
+    name: "Free",
+    price: "₹0",
+    sub: "forever",
+    blurb: "Test the waters. See your business online today.",
+    features: [
+      "Bridgeaux subdomain",
+      "Single page website",
+      "Google Business Profile setup guide",
+      "Zoho free email",
+    ],
+    excluded: ["Custom domain", "Remove watermark", "Business email inbox", "Monthly content"],
+    cta: "Get started free",
+    href: "/contact?plan=free",
+  },
+  {
+    name: "Starter",
+    price: "₹499",
+    sub: "setup, then ₹299/month",
+    blurb: "Everything a small business needs to look professional.",
+    highlight: true,
+    features: [
+      "Custom .com or .in domain",
+      "Multi-page website, no watermark",
+      "Business email via Zoho",
+      "Google Business Profile auto-linked",
+      "15 AI social posts per month",
+      "Content calendar included",
+    ],
+    cta: "Get early access",
+    href: "/contact?plan=starter",
+  },
+  {
+    name: "Growth",
+    price: "₹2,999",
+    sub: "setup, then ₹999/month",
+    blurb: "For businesses that want leads, not just a website.",
+    features: [
+      "Everything in Starter",
+      "25 AI image generations / month",
+      "WhatsApp Business setup",
+      "CRM via Google Sheets or Cloud",
+      "Lead inbox dashboard",
+      "Directory listings (JustDial, IndiaMART)",
+      "Priority support",
+    ],
+    cta: "Talk to us",
+    href: "/contact?plan=growth",
+  },
+] as Array<{ name: string; price: string; sub: string; blurb: string; highlight?: boolean; features: readonly string[]; excluded?: readonly string[]; cta: string; href: string }>;
+
+const faqs = [
+  {
+    q: "Do I own my domain and website?",
+    a: "Yes, completely. Your domain is registered in your name and your website content belongs to you. If you ever leave Bridgeaux you take everything with you. No lock in.",
+  },
+  {
+    q: "Is this just another website builder?",
+    a: "No. Website builders make you do all the work. Bridgeaux does the work. One prompt builds your website, email, Google listing, social content and domain together. You manage everything from one dashboard.",
+  },
+  {
+    q: "What if I already have a website?",
+    a: "You can connect your existing domain and Bridgeaux builds around what you already have. We fill the gaps, not replace what is working.",
+  },
+  {
+    q: "Which Indian payment methods do you accept?",
+    a: "UPI, all major credit and debit cards, and net banking via Razorpay. No international card required.",
+  },
+];
+
 const Index = () => {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [submitted, setSubmitted] = useState(false);
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState(false);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll<HTMLElement>("section[data-reveal]");
+    sections.forEach((s) => {
+      s.style.opacity = "0";
+      s.style.transform = "translateY(20px)";
+      s.style.transition = "opacity 500ms ease, transform 500ms ease";
+    });
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const el = e.target as HTMLElement;
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+            io.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.08 },
+    );
+    sections.forEach((s) => io.observe(s));
+    return () => io.disconnect();
+  }, []);
+
+  const submitWaitlist = () => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!re.test(email)) {
+      setEmailError(true);
+      return;
+    }
+    setEmailError(false);
+    setSubmitted(true);
+  };
+
   return (
     <Layout>
       {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-x-0 top-0 h-1 bg-gradient-bridge" aria-hidden />
-        <div className="container-prose pt-20 pb-24 md:pt-28 md:pb-32 grid md:grid-cols-12 gap-10 items-center">
+      <section data-reveal className="relative overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-1 bg-gradient-bridge z-10" aria-hidden />
+        {/* Dot grid */}
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none opacity-[0.35]"
+          style={{
+            backgroundImage:
+              "radial-gradient(hsl(161 80% 40% / 0.18) 1px, transparent 1px)",
+            backgroundSize: "22px 22px",
+            maskImage:
+              "radial-gradient(ellipse at 50% 30%, black 40%, transparent 75%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse at 50% 30%, black 40%, transparent 75%)",
+          }}
+        />
+        {/* Radial glow */}
+        <div
+          aria-hidden
+          className="absolute left-1/2 top-32 -translate-x-1/2 h-[500px] w-[800px] pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(circle, hsl(161 80% 40% / 0.18) 0%, transparent 65%)",
+            filter: "blur(40px)",
+          }}
+        />
+        <div className="relative container-prose pt-20 pb-24 md:pt-28 md:pb-32 grid md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-7 animate-fade-up">
             <span className="eyebrow">Now in early access · India</span>
             <h1 className="mt-5 font-display text-5xl md:text-7xl leading-[1.02] tracking-tight text-brand-ink">
@@ -38,15 +174,15 @@ const Index = () => {
               hour.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                to="/contact?intent=waitlist"
-                className="inline-flex items-center gap-2 rounded-sm bg-brand-ink px-5 py-3 text-sm font-medium text-brand-paper hover:bg-brand-ink/90 transition"
+              <a
+                href="#waitlist"
+                className="inline-flex items-center gap-2 rounded-sm bg-brand-green px-5 py-3 text-sm font-medium text-brand-paper hover:bg-brand-green/90 transition"
               >
                 Get early access <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
               <Link
                 to="/how-it-works"
-                className="inline-flex items-center gap-2 rounded-sm border border-brand-ink/15 px-5 py-3 text-sm font-medium text-brand-ink hover:bg-brand-sand transition"
+                className="inline-flex items-center gap-2 rounded-sm border border-border px-5 py-3 text-sm font-medium text-brand-ink hover:bg-brand-sand transition"
               >
                 See how it works
               </Link>
@@ -76,20 +212,38 @@ const Index = () => {
           <div className="md:col-span-5 animate-fade-up [animation-delay:120ms]">
             <div className="relative rounded-md bg-card shadow-lift border border-border overflow-hidden">
               <div className="px-4 py-2.5 border-b border-border flex items-center gap-1.5 bg-brand-sand/40">
-                <span className="h-2.5 w-2.5 rounded-full bg-brand-ink/15" />
-                <span className="h-2.5 w-2.5 rounded-full bg-brand-ink/15" />
-                <span className="h-2.5 w-2.5 rounded-full bg-brand-ink/15" />
+                <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#FF5F57" }} />
+                <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#FFBD2E" }} />
+                <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#28C840" }} />
                 <span className="ml-3 text-[11px] text-muted-foreground font-mono">bridgeaux.app</span>
               </div>
               <div className="p-6 space-y-4">
                 <p className="text-xs font-mono text-muted-foreground">› Describe your business</p>
-                <p className="text-sm text-brand-ink leading-relaxed">
-                  "I run a small bakery in Indiranagar, Bengaluru. We do
-                  custom cakes and weekend brunch."
-                </p>
+                <textarea
+                  defaultValue="I run a small bakery in Indiranagar, Bengaluru. We do custom cakes and weekend brunch."
+                  rows={3}
+                  style={{
+                    width: "100%",
+                    background: "hsl(160 35% 8%)",
+                    border: "1px solid hsl(160 20% 14%)",
+                    borderRadius: "6px",
+                    padding: "12px 14px",
+                    color: "hsl(165 20% 94%)",
+                    fontSize: "13px",
+                    lineHeight: "1.55",
+                    outline: "none",
+                    resize: "none",
+                    fontFamily: "inherit",
+                  }}
+                  onFocus={(e) => (e.currentTarget.style.borderColor = "hsl(161 80% 40% / 0.6)")}
+                  onBlur={(e) => (e.currentTarget.style.borderColor = "hsl(160 20% 14%)")}
+                />
                 <div className="flex flex-wrap gap-1.5">
                   {["Restaurant", "Retail", "Tutor", "Salon", "Freelancer"].map((t) => (
-                    <span key={t} className="text-[11px] px-2 py-1 rounded-sm bg-brand-sand text-brand-ink/70">
+                    <span
+                      key={t}
+                      className="text-[11px] px-2 py-1 rounded-sm bg-brand-sand text-brand-ink/70 border border-transparent transition-colors cursor-pointer hover:!border-brand-green hover:!text-brand-green"
+                    >
                       {t}
                     </span>
                   ))}
@@ -125,7 +279,7 @@ const Index = () => {
       </section>
 
       {/* STATS strip */}
-      <section className="border-y border-border bg-brand-sand/40">
+      <section data-reveal className="border-y border-border bg-brand-sand/40">
         <div className="container-prose py-10 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             ["60 min", "Average setup"],
@@ -142,7 +296,7 @@ const Index = () => {
       </section>
 
       {/* WHAT YOU GET */}
-      <section className="container-prose py-24">
+      <section data-reveal className="container-prose py-24">
         <div className="max-w-2xl">
           <span className="eyebrow">The bridge</span>
           <h2 className="mt-4 font-display text-4xl md:text-5xl tracking-tight">
@@ -167,41 +321,238 @@ const Index = () => {
       </section>
 
       {/* PROCESS */}
-      <section className="bg-brand-ink text-brand-paper">
+      <section data-reveal className="bg-brand-sand/40 border-y border-border">
         <div className="container-prose py-24">
           <div className="max-w-2xl">
-            <span className="eyebrow text-brand-paper/60">The process</span>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl tracking-tight text-brand-paper">
+            <span className="eyebrow">The process</span>
+            <h2 className="mt-4 font-display text-4xl md:text-5xl tracking-tight">
               Three steps. Zero confusion.
             </h2>
           </div>
           <div className="mt-14 grid md:grid-cols-3 gap-10">
             {steps.map((s) => (
-              <div key={s.n} className="border-t border-brand-paper/15 pt-6">
-                <div className="font-mono text-sm text-brand-leaf">{s.n}</div>
-                <h3 className="mt-3 font-display text-2xl text-brand-paper">{s.title}</h3>
-                <p className="mt-2 text-sm text-brand-paper/70 leading-relaxed">{s.body}</p>
+              <div key={s.n} className="border-t border-border pt-6">
+                <div className="font-mono text-sm text-brand-green">{s.n}</div>
+                <h3 className="mt-3 font-display text-2xl">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="container-prose py-24 text-center">
-        <h2 className="font-display text-4xl md:text-5xl tracking-tight">
-          Get in <span className="italic text-bridge">early</span>.
-        </h2>
-        <p className="mt-4 text-muted-foreground max-w-md mx-auto">
-          Bridgeaux is in early access. Join the waitlist and be first in line
-          when we open up.
-        </p>
-        <Link
-          to="/contact?intent=waitlist"
-          className="mt-8 inline-flex items-center gap-2 rounded-sm bg-brand-ink px-6 py-3 text-sm font-medium text-brand-paper hover:bg-brand-ink/90"
+      {/* PRICING */}
+      <section data-reveal className="container-prose py-24">
+        <div className="max-w-2xl">
+          <span className="eyebrow">Pricing</span>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl tracking-tight">
+            Honest prices for <span className="italic text-bridge">Indian businesses</span>.
+          </h2>
+          <p className="mt-4 text-muted-foreground text-lg">
+            No agency markups. No hidden fees. Pay only for what you use. All
+            prices in INR, GST included where applicable.
+          </p>
+        </div>
+
+        <div className="mt-14 grid md:grid-cols-3 gap-6">
+          {tiers.map((t) => (
+            <div
+              key={t.name}
+              className={cn(
+                "relative rounded-md border p-7 flex flex-col bg-card",
+                t.highlight ? "border-brand-green shadow-lift" : "border-border",
+              )}
+            >
+              {t.highlight && (
+                <span className="absolute -top-3 left-7 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-sm bg-gradient-bridge text-brand-paper">
+                  Most popular
+                </span>
+              )}
+              <h3 className="font-display text-2xl">{t.name}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{t.blurb}</p>
+
+              <div className="mt-6 flex items-baseline gap-2">
+                <span className="font-display text-4xl text-brand-ink">{t.price}</span>
+                <span className="text-sm text-muted-foreground">{t.sub}</span>
+              </div>
+
+              <ul className="mt-6 space-y-2.5 text-sm flex-1">
+                {t.features.map((f) => (
+                  <li key={f} className="flex gap-2">
+                    <Check className="h-4 w-4 text-brand-green shrink-0 mt-0.5" />
+                    <span>{f}</span>
+                  </li>
+                ))}
+                {t.excluded?.map((f) => (
+                  <li key={f} className="flex items-center gap-2 text-muted-foreground/50">
+                    <span className="h-4 w-4 shrink-0 rounded-full bg-muted-foreground/30 inline-flex items-center justify-center">
+                      <X className="h-2.5 w-2.5 text-background" strokeWidth={3} />
+                    </span>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                to={t.href}
+                className={cn(
+                  "mt-8 inline-flex justify-center rounded-sm px-5 py-2.5 text-sm font-medium transition",
+                  t.highlight
+                    ? "bg-brand-green text-brand-paper hover:bg-brand-green/90"
+                    : "border border-border text-brand-ink hover:bg-brand-sand",
+                )}
+              >
+                {t.cta}
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section data-reveal className="container-prose py-24">
+        <div style={{ maxWidth: "720px", margin: "0 auto" }}>
+          <span className="eyebrow">FAQ</span>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl tracking-tight">
+            Questions, <span className="italic">answered</span>.
+          </h2>
+
+          <div className="mt-12">
+            {faqs.map((item, i) => {
+              const open = openFaq === i;
+              return (
+                <div
+                  key={item.q}
+                  style={{
+                    borderBottom: "1px solid hsl(160 20% 12%)",
+                    padding: "20px 0",
+                  }}
+                >
+                  <button
+                    onClick={() => setOpenFaq(open ? null : i)}
+                    className="w-full flex items-center justify-between gap-6 text-left"
+                  >
+                    <span className="font-display text-lg md:text-xl text-brand-ink">{item.q}</span>
+                    {open ? (
+                      <Minus className="h-5 w-5 text-brand-green shrink-0" />
+                    ) : (
+                      <Plus className="h-5 w-5 text-brand-green shrink-0" />
+                    )}
+                  </button>
+                  <div
+                    style={{
+                      maxHeight: open ? "400px" : "0",
+                      overflow: "hidden",
+                      transition: "max-height 400ms ease, opacity 300ms ease",
+                      opacity: open ? 1 : 0,
+                    }}
+                  >
+                    <p className="pt-4 text-muted-foreground leading-relaxed">{item.a}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* WAITLIST */}
+      <section data-reveal id="waitlist" className="container-prose py-24 text-center">
+        <div
+          style={{
+            maxWidth: "560px",
+            margin: "0 auto",
+            background: "hsl(160 35% 6%)",
+            border: "1px solid hsl(161 80% 40% / 0.2)",
+            borderRadius: "20px",
+            padding: "52px 44px",
+          }}
         >
-          Join the waitlist <ArrowRight className="h-4 w-4" />
-        </Link>
+          <h2 className="font-display text-4xl md:text-5xl tracking-tight">
+            Get in <span className="italic text-bridge">early</span>.
+          </h2>
+          <p className="mt-4 text-muted-foreground max-w-md mx-auto">
+            Bridgeaux is in early access. Join the waitlist and be first when
+            we open up.
+          </p>
+          <div style={{ marginTop: "28px" }}>
+            {submitted ? (
+              <div>
+                <div
+                  style={{
+                    width: "48px",
+                    height: "48px",
+                    margin: "0 auto",
+                    borderRadius: "50%",
+                    background: "hsl(161 80% 40%)",
+                    color: "hsl(160 40% 4%)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "22px",
+                    fontWeight: 600,
+                  }}
+                >
+                  ✓
+                </div>
+                <p className="mt-4 font-display text-xl text-brand-ink">You are on the list.</p>
+                <p className="mt-1 text-sm text-muted-foreground">We will be in touch soon.</p>
+              </div>
+            ) : (
+              <>
+                <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center" }}>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (emailError) setEmailError(false);
+                    }}
+                    placeholder="you@email.com"
+                    style={{
+                      flex: 1,
+                      minWidth: "220px",
+                      background: "hsl(160 35% 8%)",
+                      border: `1px solid ${emailError ? "hsl(0 70% 50%)" : "hsl(160 20% 14%)"}`,
+                      borderRadius: "6px",
+                      padding: "12px 18px",
+                      color: "hsl(165 20% 94%)",
+                      fontSize: "14px",
+                      outline: "none",
+                      fontFamily: "inherit",
+                    }}
+                    onFocus={(e) => {
+                      if (!emailError) e.currentTarget.style.borderColor = "hsl(161 80% 40% / 0.6)";
+                    }}
+                    onBlur={(e) => {
+                      if (!emailError) e.currentTarget.style.borderColor = "hsl(160 20% 14%)";
+                    }}
+                  />
+                  <button
+                    onClick={submitWaitlist}
+                    style={{
+                      background: "hsl(161 80% 40%)",
+                      color: "hsl(160 40% 4%)",
+                      border: "none",
+                      borderRadius: "6px",
+                      padding: "12px 24px",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                      cursor: "pointer",
+                      whiteSpace: "nowrap",
+                      fontFamily: "inherit",
+                    }}
+                  >
+                    Join Waitlist
+                  </button>
+                </div>
+                <p className="mt-4 text-xs text-muted-foreground">
+                  No spam. Just an early invite when we launch.
+                </p>
+              </>
+            )}
+          </div>
+        </div>
       </section>
     </Layout>
   );

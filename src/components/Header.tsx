@@ -65,12 +65,12 @@ export const Header = () => {
           >
             Sign in
           </Link>
-          <Link
-            to="/contact?intent=waitlist"
+          <a
+            href="/#waitlist"
             className="inline-flex items-center rounded-sm bg-brand-ink px-4 py-2 text-sm font-medium text-brand-paper hover:bg-brand-ink/90 transition-colors"
           >
             Get early access
-          </Link>
+          </a>
         </div>
 
         <button
@@ -107,12 +107,12 @@ export const Header = () => {
               >
                 Sign in
               </Link>
-              <Link
-                to="/contact?intent=waitlist"
+              <a
+                href="/#waitlist"
                 className="flex-1 text-center rounded-sm bg-brand-ink text-brand-paper px-4 py-2.5 text-sm"
               >
                 Get early access
-              </Link>
+              </a>
             </div>
           </div>
         </div>
