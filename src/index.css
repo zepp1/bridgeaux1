@@ -136,4 +136,7 @@
     height: 1px;
     background: hsl(var(--brand-teal));
   }
+  .input-base {
+    @apply w-full rounded-sm border border-border bg-background px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-brand-teal/40 focus:border-brand-teal transition;
+  }
 }
