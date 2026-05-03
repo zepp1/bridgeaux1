@@ -8,85 +8,46 @@
 
 @layer base {
   :root {
-    /* Surfaces — warm off-white "paper", cool deep ink */
-    --background: 40 33% 97%;
-    --foreground: 215 45% 12%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 215 45% 12%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 45% 12%;
-
-    /* Brand — pulled from the logo */
-    --brand-blue: 218 76% 43%;     /* #1e5fbf */
-    --brand-teal: 192 64% 44%;     /* #2a8fb8 */
-    --brand-green: 158 60% 43%;    /* #2db38a */
-    --brand-leaf: 134 56% 53%;     /* #4cc26a */
-    --brand-ink: 215 50% 10%;
-    --brand-paper: 40 33% 97%;
-    --brand-sand: 38 30% 92%;
-
-    --primary: 218 76% 43%;
-    --primary-foreground: 40 33% 97%;
-
-    --secondary: 38 30% 92%;
-    --secondary-foreground: 215 45% 12%;
-
-    --muted: 38 25% 94%;
-    --muted-foreground: 215 18% 38%;
-
-    --accent: 158 60% 43%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 70% 45%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 215 20% 86%;
-    --input: 215 20% 86%;
-    --ring: 218 76% 43%;
-
-    --radius: 0.25rem;
-
-    /* Gradients */
-    --gradient-bridge: linear-gradient(90deg, hsl(var(--brand-blue)) 0%, hsl(var(--brand-teal)) 50%, hsl(var(--brand-green)) 100%);
-    --gradient-bridge-soft: linear-gradient(135deg, hsl(var(--brand-blue) / 0.08), hsl(var(--brand-green) / 0.08));
-
-    /* Shadows */
-    --shadow-paper: 0 1px 0 hsl(215 30% 15% / 0.04), 0 8px 24px -12px hsl(215 50% 10% / 0.12);
-    --shadow-lift: 0 2px 0 hsl(215 30% 15% / 0.04), 0 24px 48px -24px hsl(215 50% 10% / 0.18);
-
-    /* Sidebar (unused but kept) */
-    --sidebar-background: 40 33% 97%;
-    --sidebar-foreground: 215 45% 12%;
-    --sidebar-primary: 218 76% 43%;
-    --sidebar-primary-foreground: 40 33% 97%;
-    --sidebar-accent: 38 30% 92%;
-    --sidebar-accent-foreground: 215 45% 12%;
-    --sidebar-border: 215 20% 86%;
-    --sidebar-ring: 218 76% 43%;
-  }
-
-  .dark {
-    --background: 215 50% 8%;
-    --foreground: 40 33% 95%;
-    --card: 215 45% 10%;
-    --card-foreground: 40 33% 95%;
-    --popover: 215 45% 10%;
-    --popover-foreground: 40 33% 95%;
-    --primary: 192 64% 54%;
-    --primary-foreground: 215 50% 8%;
-    --secondary: 215 35% 16%;
-    --secondary-foreground: 40 33% 95%;
-    --muted: 215 35% 14%;
-    --muted-foreground: 215 15% 65%;
-    --accent: 158 60% 48%;
-    --accent-foreground: 215 50% 8%;
+    --background: 160 40% 4%;
+    --foreground: 165 20% 94%;
+    --card: 160 35% 6%;
+    --card-foreground: 165 20% 94%;
+    --popover: 160 35% 6%;
+    --popover-foreground: 165 20% 94%;
+    --brand-blue: 213 90% 56%;
+    --brand-teal: 173 80% 40%;
+    --brand-green: 161 80% 40%;
+    --brand-leaf: 161 80% 45%;
+    --brand-ink: 165 20% 94%;
+    --brand-paper: 160 40% 4%;
+    --brand-sand: 160 25% 9%;
+    --primary: 161 80% 40%;
+    --primary-foreground: 160 40% 4%;
+    --secondary: 160 25% 10%;
+    --secondary-foreground: 165 20% 94%;
+    --muted: 160 25% 10%;
+    --muted-foreground: 160 15% 50%;
+    --accent: 161 80% 40%;
+    --accent-foreground: 160 40% 4%;
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
-    --border: 215 30% 20%;
-    --input: 215 30% 20%;
-    --ring: 192 64% 54%;
+    --border: 160 20% 12%;
+    --input: 160 20% 12%;
+    --ring: 161 80% 40%;
+    --radius: 0.25rem;
+    --gradient-bridge: linear-gradient(90deg, hsl(213 90% 56%) 0%, hsl(173 80% 40%) 50%, hsl(161 80% 40%) 100%);
+    --gradient-bridge-soft: linear-gradient(135deg, hsl(213 90% 56% / 0.08), hsl(161 80% 40% / 0.08));
+    --shadow-paper: 0 1px 0 hsl(0 0% 0% / 0.2), 0 8px 24px -12px hsl(0 0% 0% / 0.4);
+    --shadow-lift: 0 2px 0 hsl(0 0% 0% / 0.2), 0 24px 48px -24px hsl(0 0% 0% / 0.5);
+
+    --sidebar-background: 160 40% 4%;
+    --sidebar-foreground: 165 20% 94%;
+    --sidebar-primary: 161 80% 40%;
+    --sidebar-primary-foreground: 160 40% 4%;
+    --sidebar-accent: 160 25% 9%;
+    --sidebar-accent-foreground: 165 20% 94%;
+    --sidebar-border: 160 20% 12%;
+    --sidebar-ring: 161 80% 40%;
   }
 }
 
