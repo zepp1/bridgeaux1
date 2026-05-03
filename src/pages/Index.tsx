@@ -162,10 +162,10 @@ const Index = () => {
         <div className="relative container-prose pt-20 pb-24 md:pt-28 md:pb-32 grid md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-7 animate-fade-up">
             <span className="eyebrow">Now in early access · India</span>
-            <h1 className="mt-5 font-display text-5xl md:text-7xl leading-[1.02] tracking-tight text-brand-ink">
+            <h1 className="mt-5 font-display text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-brand-ink break-words">
               Your business,{" "}
-              <span className="italic text-bridge pr-2">live online</span>
-              <br /> in 60 minutes.
+              <span className="italic text-bridge inline-block pr-2">live online</span>
+              <br className="hidden sm:block" /> in 60 minutes.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
               Most Indian businesses spend three weeks and ₹40,000 just to get
