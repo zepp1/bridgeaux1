@@ -43,14 +43,16 @@ const phases = [
 const HowItWorks = () => (
   <Layout>
     <section className="container-prose pt-20 pb-12">
-      <span className="eyebrow">How it works</span>
+      <span className="eyebrow">How it works · Powered by AI</span>
       <h1 className="mt-4 font-display text-5xl md:text-6xl tracking-tight max-w-3xl">
         From a single sentence to a <span className="italic text-bridge">live business</span> — in under an hour.
       </h1>
       <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
-        We treat your online presence the way an engineer treats a bridge:
-        every span needs to land before traffic crosses. Here is exactly what
-        Bridgeaux does for you, step by step.
+        Bridgeaux is powered by AI end to end. You describe your business in
+        plain English; our AI writes your website copy, designs the layout,
+        drafts your Google listing, generates your first month of social posts
+        and assembles everything together — the way an engineer builds a bridge,
+        span by span. You stay in control; the AI does the heavy lifting.
       </p>
     </section>
 
