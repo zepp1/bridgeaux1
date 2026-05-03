@@ -69,7 +69,7 @@ const tiers = [
     cta: "Talk to us",
     href: "/contact?plan=growth",
   },
-] as const;
+] as Array<{ name: string; price: string; sub: string; blurb: string; highlight?: boolean; features: readonly string[]; excluded?: readonly string[]; cta: string; href: string }>;
 
 const faqs = [
   {
