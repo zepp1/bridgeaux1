@@ -21,55 +21,73 @@ const steps = [
 
 const tiers = [
   {
-    name: "Free",
-    price: "₹0",
-    sub: "forever",
-    blurb: "Test the waters. See your business online today.",
-    features: [
-      "Bridgeaux subdomain",
-      "Single page website",
-      "Google Business Profile setup guide",
-      "Zoho free email",
-    ],
-    excluded: ["Custom domain", "Remove watermark", "Business email inbox", "Monthly content"],
-    cta: "Get started free",
-    href: "/contact?plan=free",
-  },
-  {
     name: "Starter",
-    price: "₹499",
-    sub: "setup, then ₹299/month",
-    blurb: "Everything a small business needs to look professional.",
-    highlight: true,
+    setup: "₹1,999",
+    monthly: "₹999",
+    blurb:
+      "For solo founders and home businesses that want to look legitimate online from day one.",
+    highlight: false,
     features: [
-      "Custom .com or .in domain",
-      "Multi-page website, no watermark",
-      "Business email via Zoho",
-      "Google Business Profile auto-linked",
-      "15 AI social posts per month",
-      "Content calendar included",
+      "AI generated multi-page website",
+      "Domain purchase assisted via GoDaddy",
+      "Business email via Zoho (you@yourbrand.in)",
+      "Google Business Profile created and optimised",
+      "AI generated logo",
+      "10 social media posts per month with captions",
+      "Basic content calendar",
+      "Bridgeaux dashboard access",
     ],
-    cta: "Get early access",
+    excluded: [
+      "AI image generation",
+      "Social media scheduling",
+      "WhatsApp Business",
+      "CRM setup",
+    ],
+    cta: "Get started",
     href: "/contact?plan=starter",
   },
   {
     name: "Growth",
-    price: "₹2,999",
-    sub: "setup, then ₹999/month",
-    blurb: "For businesses that want leads, not just a website.",
+    setup: "₹3,499",
+    monthly: "₹1,299",
+    blurb: "For serious businesses that want leads, not just a website.",
+    highlight: true,
     features: [
       "Everything in Starter",
-      "25 AI image generations / month",
-      "WhatsApp Business setup",
-      "CRM via Google Sheets or Cloud",
-      "Lead inbox dashboard",
-      "Directory listings (JustDial, IndiaMART)",
-      "Priority support",
+      "15 AI image generations per month",
+      "Social media scheduling from dashboard",
+      "WhatsApp Business API setup",
+      "Basic CRM via Google Sheets or Supabase",
+      "Directory listings on JustDial and IndiaMART",
+      "Google review management and response suggestions",
+      "Monthly website content updates",
     ],
-    cta: "Talk to us",
+    excluded: [],
+    cta: "Get early access",
     href: "/contact?plan=growth",
   },
-] as Array<{ name: string; price: string; sub: string; blurb: string; highlight?: boolean; features: readonly string[]; excluded?: readonly string[]; cta: string; href: string }>;
+  {
+    name: "Pro",
+    setup: "₹6,499",
+    monthly: "₹3,999",
+    blurb:
+      "For real operations that want to grow aggressively and run everything from one place.",
+    highlight: false,
+    features: [
+      "Everything in Growth",
+      "25 AI image generations per month",
+      "Full social media management (IG, FB, LinkedIn)",
+      "Razorpay payment integration on website",
+      "Advanced CRM with lead tracking",
+      "Monthly SEO report with keyword rankings",
+      "Email marketing via Mailchimp or Zoho",
+      "Priority support with 24 hour response",
+    ],
+    excluded: [],
+    cta: "Talk to us",
+    href: "/contact?plan=pro",
+  },
+] as Array<{ name: string; setup: string; monthly: string; blurb: string; highlight?: boolean; features: readonly string[]; excluded: readonly string[]; cta: string; href: string }>;
 
 const faqs = [
   {
@@ -359,7 +377,7 @@ const Index = () => {
             <div
               key={t.name}
               className={cn(
-                "relative rounded-md border p-7 flex flex-col bg-card",
+                "relative rounded-md border p-7 flex flex-col bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift",
                 t.highlight ? "border-brand-green shadow-lift" : "border-border",
               )}
             >
@@ -371,9 +389,15 @@ const Index = () => {
               <h3 className="font-display text-2xl">{t.name}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{t.blurb}</p>
 
-              <div className="mt-6 flex items-baseline gap-2">
-                <span className="font-display text-4xl text-brand-ink">{t.price}</span>
-                <span className="text-sm text-muted-foreground">{t.sub}</span>
+              <div className="mt-6 flex items-stretch gap-3">
+                <div className="flex-1 rounded-sm border border-border p-3">
+                  <div className="font-display text-2xl text-brand-ink">{t.setup}</div>
+                  <div className="text-[11px] uppercase tracking-wider text-muted-foreground mt-0.5">setup</div>
+                </div>
+                <div className="flex-1 rounded-sm border border-border p-3">
+                  <div className="font-display text-2xl text-brand-ink">{t.monthly}</div>
+                  <div className="text-[11px] uppercase tracking-wider text-muted-foreground mt-0.5">per month</div>
+                </div>
               </div>
 
               <ul className="mt-6 space-y-2.5 text-sm flex-1">
@@ -384,11 +408,9 @@ const Index = () => {
                   </li>
                 ))}
                 {t.excluded?.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-muted-foreground/50">
-                    <span className="h-4 w-4 shrink-0 rounded-full bg-muted-foreground/30 inline-flex items-center justify-center">
-                      <X className="h-2.5 w-2.5 text-background" strokeWidth={3} />
-                    </span>
-                    <span>{f}</span>
+                  <li key={f} className="flex gap-2 text-muted-foreground/50">
+                    <span className="h-4 w-4 shrink-0 inline-flex items-center justify-center text-xs">✕</span>
+                    <span className="line-through">{f}</span>
                   </li>
                 ))}
               </ul>
@@ -406,6 +428,18 @@ const Index = () => {
               </Link>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <p className="text-sm text-muted-foreground">
+            Need more? We also offer Enterprise and Custom plans.
+          </p>
+          <Link
+            to="/pricing"
+            className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-brand-green hover:gap-2.5 transition-all"
+          >
+            See all plans including Enterprise and Custom <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
 
