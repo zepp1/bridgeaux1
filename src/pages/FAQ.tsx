@@ -13,11 +13,11 @@ const faqs = [
   },
   {
     q: "Is this just another website builder?",
-    a: "No. Website builders make you do all the work — pick a template, write copy, configure email, set up a Google listing. Bridgeaux does the work. One prompt assembles your website, email, Google listing, social content and domain together. You manage everything from one dashboard.",
+    a: "No. Website builders make you do all the work, pick a template, write copy, configure email, set up a Google listing. Bridgeaux does the work. One prompt assembles your website, email, Google listing, social content and domain together. You manage everything from one dashboard.",
   },
   {
     q: "What if I already have a website?",
-    a: "You can connect your existing domain and Bridgeaux builds around what you already have — adding email, Google listing, social content, lead inbox. We fill the gaps, not replace what is working.",
+    a: "You can connect your existing domain and Bridgeaux builds around what you already have, adding email, Google listing, social content, lead inbox. We fill the gaps, not replace what is working.",
   },
   {
     q: "Which Indian payment methods do you accept?",
@@ -29,11 +29,11 @@ const faqs = [
   },
   {
     q: "How long does setup actually take?",
-    a: "47 minutes on average from first prompt to a fully live business — including Google listing verification (which is the slowest piece). Most websites are ready to preview in under 10 minutes.",
+    a: "47 minutes on average from first prompt to a fully live business, including Google listing verification (which is the slowest piece). Most websites are ready to preview in under 10 minutes.",
   },
   {
     q: "Can I cancel anytime?",
-    a: "Yes. Monthly plans cancel at the end of the current billing cycle. You keep your domain, content and email — you can point them anywhere.",
+    a: "Yes. Monthly plans cancel at the end of the current billing cycle. You keep your domain, content and email, you can point them anywhere.",
   },
   {
     q: "Is my data safe?",
@@ -49,7 +49,7 @@ const FAQ = () => (
         Questions people <span className="italic text-bridge">actually ask</span>.
       </h1>
       <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
-        Don't see your question? Write to us — we reply within a working day.
+        Don't see your question? Write to us, we reply within a working day.
       </p>
     </section>
 

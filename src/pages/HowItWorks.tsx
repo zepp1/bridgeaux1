@@ -14,7 +14,7 @@ const phases = [
     n: "02",
     title: "Bridgeaux fills the gaps",
     detail:
-      "A short conversation — opening hours, photos you already have, the social handles you want. Skip anything you don't know; we'll suggest sensible defaults.",
+      "A short conversation, opening hours, photos you already have, the social handles you want. Skip anything you don't know; we'll suggest sensible defaults.",
     sample: "Auto-detected: cuisine, neighbourhood, price range, suggested .in domain.",
   },
   {
@@ -29,7 +29,7 @@ const phases = [
     title: "Review in one screen",
     detail:
       "Every piece appears in your dashboard with a preview. Approve, tweak the wording, swap a photo, change the colour. One button to publish it all.",
-    sample: "Edits are plain English — “make the hero shorter”, “add WhatsApp button”.",
+    sample: "Edits are plain English, “make the hero shorter”, “add WhatsApp button”.",
   },
   {
     n: "05",
@@ -45,13 +45,13 @@ const HowItWorks = () => (
     <section className="container-prose pt-20 pb-12">
       <span className="eyebrow">How it works · Powered by AI</span>
       <h1 className="mt-4 font-display text-5xl md:text-6xl tracking-tight max-w-3xl">
-        From a single sentence to a <span className="italic text-bridge">live business</span> — in under an hour.
+        From a single sentence to a <span className="italic text-bridge">live business</span>, in under an hour.
       </h1>
       <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
         Bridgeaux is powered by AI end to end. You describe your business in
         plain English; our AI writes your website copy, designs the layout,
         drafts your Google listing, generates your first month of social posts
-        and assembles everything together — the way an engineer builds a bridge,
+        and assembles everything together, the way an engineer builds a bridge,
         span by span. You stay in control; the AI does the heavy lifting.
       </p>
     </section>

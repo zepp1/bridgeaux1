@@ -3,11 +3,11 @@ import { Layout } from "@/components/Layout";
 const principles = [
   {
     t: "Bridges, not builders",
-    d: "We don't hand you tools and templates. We span the distance between your idea and a fully working business — the way a bridge spans a river. You walk across, you don't build it.",
+    d: "We don't hand you tools and templates. We span the distance between your idea and a fully working business, the way a bridge spans a river. You walk across, you don't build it.",
   },
   {
     t: "Indian by default",
-    d: "Built in INR pricing. Razorpay, UPI, .in domains, GST-ready invoicing, Indian data centres. Languages and listings tuned for India first — global later.",
+    d: "Built in INR pricing. Razorpay, UPI, .in domains, GST-ready invoicing, Indian data centres. Languages and listings tuned for India first, global later.",
   },
   {
     t: "Honest software",

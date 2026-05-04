@@ -5,17 +5,17 @@ import { ArrowRight, Check, Globe, Mail, MapPin, Sparkles, MessageSquare, Layout
 import { cn } from "@/lib/utils";
 
 const pieces = [
-  { icon: Globe, title: "Website", body: "Mobile-ready, SEO clean. Live in minutes — not weeks." },
+  { icon: Globe, title: "Website", body: "Mobile-ready, SEO clean. Live in minutes, not weeks." },
   { icon: Mail, title: "Business email", body: "yourname@yourbrand.in via Zoho. Professional from day one." },
   { icon: MapPin, title: "Google listing", body: "GBP set up and optimised so locals actually find you." },
-  { icon: MessageSquare, title: "Social content", body: "Your first 15 posts, captions and a calendar — ready to publish." },
+  { icon: MessageSquare, title: "Social content", body: "Your first 15 posts, captions and a calendar, ready to publish." },
   { icon: Sparkles, title: "Domain", body: ".com or .in suggestions, registered in your name. One click." },
   { icon: LayoutDashboard, title: "Dashboard", body: "One control room for your entire online presence." },
 ];
 
 const steps = [
-  { n: "01", title: "Describe your business", body: "A few sentences — what you do, who you serve, where you are." },
-  { n: "02", title: "Bridgeaux assembles it all", body: "Domain, website, email, listing and content — built in parallel." },
+  { n: "01", title: "Describe your business", body: "A few sentences, what you do, who you serve, where you are." },
+  { n: "02", title: "Bridgeaux assembles it all", body: "Domain, website, email, listing and content, built in parallel." },
   { n: "03", title: "Approve and go live", body: "Review in one screen. Click launch. Manage from a single dashboard." },
 ];
 
@@ -187,8 +187,8 @@ const Index = () => {
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
               Most Indian businesses spend three weeks and ₹40,000 just to get
-              online. Bridgeaux does the whole bridge — domain, website, email,
-              Google listing and social content — automatically, in under an
+              online. Bridgeaux does the whole bridge, domain, website, email,
+              Google listing and social content, automatically, in under an
               hour.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -311,7 +311,7 @@ const Index = () => {
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
             No agency. No developer. No Googling at midnight. The six things
-            every business actually needs — assembled together, the way a
+            every business actually needs, assembled together, the way a
             bridge is built piece by piece, span by span.
           </p>
         </div>

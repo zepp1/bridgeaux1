@@ -6,7 +6,7 @@ interface LogoProps {
 }
 
 /**
- * Bridgeaux mark — "BA" letters built like a bridge spanning blue to green,
+ * Bridgeaux mark, "BA" letters built like a bridge spanning blue to green,
  * with an arched suspension underneath. Reconstructed as inline SVG so it
  * stays crisp at every size and inherits brand gradient tokens.
  */

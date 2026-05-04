@@ -46,7 +46,7 @@ const tiers = [
       "Directory listings on JustDial and IndiaMART",
       "Google review management and response suggestions",
       "Monthly website content updates",
-      "Analytics dashboard — website visits and GBP views",
+      "Analytics dashboard, website visits and GBP views",
     ],
     excluded: [],
     cta: "Get early access",
@@ -196,7 +196,7 @@ const Pricing = () => (
       <p className="mt-6 max-w-3xl text-sm text-muted-foreground bg-brand-sand/40 border border-border rounded-sm px-4 py-3">
         💡 A freelancer charges ₹15,000 to ₹40,000 for a basic website alone. A
         digital agency costs ₹15,000 to ₹50,000 per month. Bridgeaux gives you
-        both — plus email, Google listing, social content and a dashboard — for
+        both, plus email, Google listing, social content and a dashboard, for
         a fraction of the cost.
       </p>
     </section>
