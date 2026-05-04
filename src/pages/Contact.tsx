@@ -51,7 +51,7 @@ const Contact = () => {
           </h1>
           <p className="mt-4 text-muted-foreground text-lg">
             Whether you want early access, have a partnership idea, or just a
-            question — drop us a line and a real human writes back.
+            question, drop us a line and a real human writes back.
           </p>
 
           <div className="mt-10 space-y-5 text-sm">

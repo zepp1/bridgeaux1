@@ -7,8 +7,8 @@ export const Footer = () => (
       <div className="md:col-span-2 max-w-sm">
         <Logo />
         <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-          Bridgeaux gets Indian businesses fully online — domain, website,
-          email, Google listing and social — in under an hour. Built in India,
+          Bridgeaux gets Indian businesses fully online, domain, website,
+          email, Google listing and social, in under an hour. Built in India,
           for India.
         </p>
         <div className="mt-6 h-px w-24 bg-gradient-bridge" />

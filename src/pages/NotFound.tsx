@@ -17,7 +17,7 @@ const NotFound = () => {
           That bridge isn't <span className="italic text-bridge">built</span> yet.
         </h1>
         <p className="mt-5 text-muted-foreground max-w-md mx-auto">
-          The page you tried to reach doesn't exist — or has moved. Let's get you back to solid ground.
+          The page you tried to reach doesn't exist, or has moved. Let's get you back to solid ground.
         </p>
         <Link
           to="/"
