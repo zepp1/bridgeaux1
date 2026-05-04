@@ -82,8 +82,8 @@ const HowItWorks = () => (
       <h2 className="font-display text-4xl tracking-tight">Ready to cross the bridge?</h2>
       <p className="mt-3 text-muted-foreground">Early access is opening city by city.</p>
       <Link
-        to="/contact?intent=waitlist"
-        className="mt-6 inline-flex items-center gap-2 rounded-sm bg-brand-ink px-6 py-3 text-sm font-medium text-brand-paper"
+        to="/#waitlist"
+        className="mt-6 inline-flex items-center gap-2 rounded-sm bg-brand-ink px-6 py-3 text-sm font-medium text-brand-paper hover:bg-brand-ink/90 transition-colors"
       >
         Join the waitlist <ArrowRight className="h-4 w-4" />
       </Link>
