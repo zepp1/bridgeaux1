@@ -69,8 +69,12 @@
   }
   h1, h2, h3, h4, h5 {
     @apply font-display tracking-tight text-foreground;
-    font-feature-settings: "ss01";
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
+  h1 { line-height: 1.1; }
+  h2 { line-height: 1.15; }
+  h3, h4, h5 { line-height: 1.2; }
   ::selection {
     background: hsl(var(--brand-green) / 0.25);
     color: hsl(var(--brand-ink));
@@ -91,6 +95,8 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    padding-right: 0.08em;
+    padding-bottom: 0.08em;
   }
   .eyebrow {
     @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground;
