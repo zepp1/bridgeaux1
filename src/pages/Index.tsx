@@ -307,7 +307,7 @@ const Index = () => {
         <div className="max-w-2xl">
           <span className="eyebrow">The bridge</span>
           <h2 className="mt-4 font-display text-4xl md:text-5xl tracking-tight">
-            One prompt. <span className="italic">Everything</span> launches.
+            One prompt. <span className="text-bridge">Everything</span> launches.
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
             No agency. No developer. No Googling at midnight. The six things
@@ -437,7 +437,7 @@ const Index = () => {
         <div style={{ maxWidth: "720px", margin: "0 auto" }}>
           <span className="eyebrow">FAQ</span>
           <h2 className="mt-4 font-display text-4xl md:text-5xl tracking-tight">
-            Questions, <span className="italic">answered</span>.
+            Questions, <span className="text-bridge">answered</span>.
           </h2>
 
           <div className="mt-12">
