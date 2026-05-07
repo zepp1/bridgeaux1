@@ -14,7 +14,7 @@ const NotFound = () => {
       <section className="container-prose py-32 text-center">
         <div className="font-mono text-xs uppercase tracking-[0.2em] text-brand-teal">Error 404</div>
         <h1 className="mt-4 font-display text-6xl md:text-8xl tracking-tight">
-          That bridge isn't <span className="italic text-bridge">built</span> yet.
+          That bridge isn't <span className="text-bridge">built</span> yet.
         </h1>
         <p className="mt-5 text-muted-foreground max-w-md mx-auto">
           The page you tried to reach doesn't exist, or has moved. Let's get you back to solid ground.

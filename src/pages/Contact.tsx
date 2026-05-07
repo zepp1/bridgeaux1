@@ -47,7 +47,7 @@ const Contact = () => {
         <div className="md:col-span-5">
           <span className="eyebrow">Contact</span>
           <h1 className="mt-4 font-display text-5xl tracking-tight">
-            Let's <span className="italic text-bridge">talk</span>.
+            Let's <span className="text-bridge">talk</span>.
           </h1>
           <p className="mt-4 text-muted-foreground text-lg">
             Whether you want early access, have a partnership idea, or just a

@@ -182,7 +182,7 @@ const Index = () => {
             <span className="eyebrow">Now in early access · India</span>
             <h1 className="mt-5 font-display text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-brand-ink break-words">
               Your business,{" "}
-              <span className="italic text-bridge inline-block pr-2">live online</span>
+              <span className="text-bridge font-extrabold inline-block pr-2">live online</span>
               <br className="hidden sm:block" /> in 60 minutes.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
@@ -307,7 +307,7 @@ const Index = () => {
         <div className="max-w-2xl">
           <span className="eyebrow">The bridge</span>
           <h2 className="mt-4 font-display text-4xl md:text-5xl tracking-tight">
-            One prompt. <span className="italic">Everything</span> launches.
+            One prompt. <span className="text-bridge">Everything</span> launches.
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
             No agency. No developer. No Googling at midnight. The six things
@@ -353,7 +353,7 @@ const Index = () => {
         <div className="max-w-2xl">
           <span className="eyebrow">Pricing</span>
           <h2 className="mt-4 font-display text-4xl md:text-5xl tracking-tight">
-            Honest prices for <span className="italic text-bridge">Indian businesses</span>.
+            Honest prices for <span className="text-bridge">Indian businesses</span>.
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
             No agency markups. No hidden fees. Pay only for what you use. All
@@ -437,7 +437,7 @@ const Index = () => {
         <div style={{ maxWidth: "720px", margin: "0 auto" }}>
           <span className="eyebrow">FAQ</span>
           <h2 className="mt-4 font-display text-4xl md:text-5xl tracking-tight">
-            Questions, <span className="italic">answered</span>.
+            Questions, <span className="text-bridge">answered</span>.
           </h2>
 
           <div className="mt-12">
@@ -492,7 +492,7 @@ const Index = () => {
           }}
         >
           <h2 className="font-display text-4xl md:text-5xl tracking-tight">
-            Get in <span className="italic text-bridge">early</span>.
+            Get in <span className="text-bridge">early</span>.
           </h2>
           <p className="mt-4 text-muted-foreground max-w-md mx-auto">
             Bridgeaux is in early access. Join the waitlist and be first when

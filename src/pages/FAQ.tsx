@@ -46,7 +46,7 @@ const FAQ = () => (
     <section className="container-prose pt-20 pb-10">
       <span className="eyebrow">FAQ</span>
       <h1 className="mt-4 font-display text-5xl md:text-6xl tracking-tight max-w-3xl">
-        Questions people <span className="italic text-bridge">actually ask</span>.
+        Questions people <span className="text-bridge">actually ask</span>.
       </h1>
       <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
         Don't see your question? Write to us, we reply within a working day.

@@ -25,7 +25,7 @@ const About = () => (
       <div className="md:col-span-5">
         <span className="eyebrow">About</span>
         <h1 className="mt-4 font-display text-5xl md:text-6xl tracking-tight">
-          We're building the <span className="italic text-bridge">on-ramp</span> to digital India.
+          We're building the <span className="text-bridge">on-ramp</span> to digital India.
         </h1>
       </div>
       <div className="md:col-span-7 md:pt-10 space-y-5 text-lg text-foreground/85 leading-relaxed">

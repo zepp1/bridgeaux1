@@ -186,7 +186,7 @@ const Pricing = () => (
       <span className="eyebrow">Pricing</span>
       <h1 className="mt-4 font-display text-5xl md:text-6xl tracking-tight max-w-4xl">
         Everything your business needs online.{" "}
-        <span className="italic text-bridge">None of the agency markup.</span>
+        <span className="text-bridge">None of the agency markup.</span>
       </h1>
       <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
         Five plans built for Indian businesses at every stage. From a solo home
