@@ -45,7 +45,7 @@ const HowItWorks = () => (
     <section className="container-prose pt-20 pb-12">
       <span className="eyebrow">How it works · Powered by AI</span>
       <h1 className="mt-4 font-display text-5xl md:text-6xl tracking-tight max-w-3xl">
-        From a single sentence to a <span className="italic text-bridge">live business</span>, in under an hour.
+        From a single sentence to a <span className="text-bridge">live business</span>, in under an hour.
       </h1>
       <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
         Bridgeaux is powered by AI end to end. You describe your business in
