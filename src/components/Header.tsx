@@ -60,7 +60,7 @@ export const Header = () => {
 
         <div className="hidden md:flex items-center gap-2">
           <Link
-            to="/contact"
+            to="/auth"
             className="inline-flex items-center rounded-sm border border-brand-ink/15 px-4 py-2 text-sm font-medium text-brand-ink hover:bg-brand-sand transition-colors"
           >
             Sign in
@@ -102,7 +102,7 @@ export const Header = () => {
             ))}
             <div className="flex gap-2 pt-3">
               <Link
-                to="/contact"
+                to="/auth"
                 className="flex-1 text-center rounded-sm border border-brand-ink/15 px-4 py-2.5 text-sm"
               >
                 Sign in
